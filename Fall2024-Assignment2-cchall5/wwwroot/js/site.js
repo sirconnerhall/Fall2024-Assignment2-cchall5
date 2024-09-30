@@ -35,8 +35,13 @@
 
 // call API search when search button is clicked
 document.getElementById("searchButton").addEventListener("click", function () {
+
+    // make div visible
+    document.getElementById("searchResults").style.visibility = 'visible';
+
     // call API search
     apiSearch();
+
 });
 
 // array of background images
@@ -78,6 +83,7 @@ document.getElementById("timeButton").addEventListener("click", function () {
     document.getElementById("time").textContent = timeString;
 
     // display time div as jQuery UI window
+    document.getElementById("time").style.visibility = 'visible';
     $('#time').dialog({
         title: "Current Time",
         modal: true
