@@ -25,7 +25,8 @@
                 }
 
                 $('#searchResults').html(results);
-                $('#searchResults').dialog();
+                //$('#searchResults').dialog();
+                $('#searchResults').show();
             }
         })
         .fail(function () {
@@ -36,8 +37,9 @@
 // call API search when search button is clicked
 document.getElementById("searchButton").addEventListener("click", function () {
 
-    // make div visible
+    // div visiblity
     document.getElementById("searchResults").style.visibility = 'visible';
+    document.getElementById("time").style.visibility = 'hidden';
 
     // call API search
     apiSearch();
@@ -82,7 +84,7 @@ document.getElementById("timeButton").addEventListener("click", function () {
     // load result into time div
     document.getElementById("time").textContent = timeString;
 
-    // display time div as jQuery UI window
+    // display time div as a jQuery UI dialog
     document.getElementById("time").style.visibility = 'visible';
     $('#time').dialog({
         title: "Current Time",
